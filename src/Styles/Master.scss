@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Pathway+Gothic+One&display=swap");
+
+// the fonts from the MFE website
+@font-face {
+  font-family: trump-gothic-pro;
+  src: url(https://use.typekit.net/af/db90e9/00000000000000007735a57d/30/l?subset_id=2&fvd=n4&v=3) format("woff2"),
+    url(https://use.typekit.net/af/db90e9/00000000000000007735a57d/30/d?subset_id=2&fvd=n4&v=3) format("woff"),
+    url(https://use.typekit.net/af/db90e9/00000000000000007735a57d/30/a?subset_id=2&fvd=n4&v=3) format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: trump-gothic-pro;
+  src: url(https://use.typekit.net/af/49d57b/00000000000000007735a578/30/l?subset_id=2&fvd=n5&v=3) format("woff2"),
+    url(https://use.typekit.net/af/49d57b/00000000000000007735a578/30/d?subset_id=2&fvd=n5&v=3) format("woff"),
+    url(https://use.typekit.net/af/49d57b/00000000000000007735a578/30/a?subset_id=2&fvd=n5&v=3) format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: trump-gothic-pro;
+  src: url(https://use.typekit.net/af/b21551/00000000000000007735a564/30/l?subset_id=2&fvd=n7&v=3) format("woff2"),
+    url(https://use.typekit.net/af/b21551/00000000000000007735a564/30/d?subset_id=2&fvd=n7&v=3) format("woff"),
+    url(https://use.typekit.net/af/b21551/00000000000000007735a564/30/a?subset_id=2&fvd=n7&v=3) format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: aktiv-grotesk-thin;
+  src: url(https://use.typekit.net/af/099172/000000000000000077359d41/30/l?subset_id=2&fvd=n2&v=3) format("woff2"),
+    url(https://use.typekit.net/af/099172/000000000000000077359d41/30/d?subset_id=2&fvd=n2&v=3) format("woff"),
+    url(https://use.typekit.net/af/099172/000000000000000077359d41/30/a?subset_id=2&fvd=n2&v=3) format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: aktiv-grotesk-thin;
+  src: url(https://use.typekit.net/af/647e79/000000000000000077359d44/30/l?subset_id=2&fvd=i2&v=3) format("woff2"),
+    url(https://use.typekit.net/af/647e79/000000000000000077359d44/30/d?subset_id=2&fvd=i2&v=3) format("woff"),
+    url(https://use.typekit.net/af/647e79/000000000000000077359d44/30/a?subset_id=2&fvd=i2&v=3) format("opentype");
+  font-weight: 200;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+$header-font: trump-gothic-pro;
+$body-font: "Darker Grotesque";
+$body-color: #000000;
+$white: #ffffff;
+$header1-color: #999999;
+$header2-color: #89080d;
+$header3-color: #262427;
+$line-color: #a6a6a6;
+$footer-line-color: #a60007;
+
+.header1 {
+  font-family: $header-font;
+  color: $header1-color;
+  font-weight: 500;
+  font-size: 105px;
+  letter-spacing: 0.03em;
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+
+.header2 {
+  font-family: $header-font;
+  font-weight: 400;
+  font-size: 36px;
+  letter-spacing: 0.1em;
+  line-height: 1.3em;
+  text-transform: uppercase;
+  color: $header2-color;
+}
+
+.header3 {
+  font-family: $header-font;
+  font-weight: 700;
+  font-size: 30px;
+  letter-spacing: 0.25em;
+  line-height: 1.8em;
+  color: $header3-color;
+}
+
+.body {
+  font-family: $body-font;
+  font-weight: 200;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  line-height: 2em;
+  color: $body-color;
+}

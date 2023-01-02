@@ -1,0 +1,68 @@
+@import "../Master.scss";
+
+.auc-root {
+
+  // display it as a grid for easy adjustment on larger screens
+  // on phones, though, the grid only has 1 column
+  display: grid;
+  grid-template-columns: 1fr;
+
+  // adapt the grid to a larger screen, it should have three columns
+  @media (min-width: 740px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    // two rows for the paragrpahs, one for the divider, and one for the sponsors
+    grid-template-rows: 1fr 1fr;
+    // make the grid fill vertically first
+    grid-auto-flow: column;
+  }
+
+  .auc-card {
+
+    // add extra padding on large devices
+    @media (min-width: 740px) {
+      padding: 0 16px;
+    }
+  }
+
+  .auc-card--title {
+    text-align: center;
+    margin: 24px 0;
+    font-size: 24px;
+    font-family: $header-font;
+
+    // adjust the text on larger screens
+    @media (min-width: 740px) {
+      margin-top: 0;
+      font-size: 30px;
+      letter-spacing: .25em;
+      line-height: 1.8em;
+    }
+  }
+
+  .auc-card--text {
+    text-align: center;
+    font-family: $body-font;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 2em;
+    letter-spacing: .02em;
+  }
+}
+
+.auc-card--image {
+  width: 100%;
+
+  // on a larger screen, it should take 2 grid rows to force the middle row to be empty and have extra whitespace above
+  @media (min-width: 740px) {
+    grid-row: 1 / span 2;
+    margin-top: 51px;
+  }
+}
+
+.auc-whitespace {
+
+  // on a larger screen, it shouldn't exist to keep the grid working
+  @media (min-width: 740px) {
+    display: none;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "title": "WE ARE MCGILL FORMULA ELECTRIC",
+  "subtitle": "Formula SAE Electric 2019 Champions",
+  "catchline": "THE FUTURE OF GREEN TECHNOLOGY",
+  "description": "an engineering design team made up of motivated students united by the challenge of building a 100% electric race car to compete against universities from around the world.",
+  "sponsors": "THANK YOU TO OUR DIAMOND SPONSORS",
+
+  "aboutUs": [
+    {
+      "title": "ENGINEERING",
+      "body": "At MFE, students apply the strong fundamental knowledge that is taught at McGill by developing proven design processes, numerical tools and validation methodologies. This engineering design prowess is highlighted by our strong performance in international competitions."
+    },
+    {
+      "title": "EDUCATION",
+      "body": "MFE is a place where students can acquire the hard and soft skills necessary to deliver cutting-edge sustainable technology. Graduate students from our team possess proven technical and project management abilities, which help them play important roles in the industry."
+    },
+    {
+      "title": "INNOVATION",
+      "body": "We are continuously pushing the technical boundaries by utilizing state of the art tools in computational fluid dynamics, finite element analysis and vehicle dynamics simulations to develop our prototypes. This enables us to build one of the most sophisticated Formula Student vehicles in North America."
+    },
+    {
+      "title": "SUCCESS",
+      "body": "Our team consistently finishes in the top 4 at international competitions; we aim to continue this tradition of success. However, trophies are not the only measure of success; we hold ourselves to a very high standard and take pride and enjoyment in the quality, efficiency and performance of our electric vehicles."
+    }
+  ]
+}

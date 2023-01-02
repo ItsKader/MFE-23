@@ -1,0 +1,241 @@
+@import "../Master.scss";
+
+// use css variables to more easily adjust things like the navbar height that affect multiple styles depending on the device being used
+html {
+  --navbar-height: 70.5px;
+
+  @media (min-width: 740px) {
+    --navbar-height: 133.05px;
+  }
+
+  // for the loading animation
+  background: #808080;
+}
+
+// landing header has a fade in animation. recreate that
+@keyframes headerFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.landing-header {
+  position: relative;
+  // the header content needs to be centered in the area below the navbar,
+  // so offset it by the height of the navbar
+  top: var(--navbar-height);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
+  // on desktop, the width of the header content should not exceed 1620px.
+  // centre it with margin: auto
+  max-width: 1620px;
+  margin: auto;
+
+  margin-bottom: var(--navbar-height);
+  box-sizing: border-box;
+
+  // and use flexbox to centre the children
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  // some styling for the text content
+  color: white;
+  font-family: $header-font;
+  text-transform: uppercase;
+
+  // add the animation for entrance
+  animation: headerFadeIn 480ms ease-out;
+
+  // on bigger screens, give it padding to shrink the components inside
+  @media (min-width: 740px) {
+    padding: 36px;
+  }
+
+  // and the components inside of it
+  h1 {
+    font-weight: 500;
+    margin-left: 40px;
+
+    // on a laptop/tablet, h1 should be way bigger
+    @media (min-width: 740px) {
+      font-size: 105px;
+      line-height: 1.2em;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 400;
+
+    // adapt to larger screens
+    @media (min-width: 740px) {
+      font-size: 36px;
+      line-height: 1.2em;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  .landing-header--nomargin {
+    margin-top: 0;
+  }
+
+  .landing-header--wrapping {
+    word-wrap: break-word;
+    hyphens: auto;
+    font-weight: 700;
+  }
+}
+
+.landing {
+
+  // the root of the landing page needs certain styles to enable the parallax
+  // scroll effect on the header image.
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  // this is for the parallax scroll event
+  perspective: 1px;
+  perspective-origin: center 100vh;
+}
+
+.landing-bg--wrapper {
+  z-index: -1;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// this image is the parallax scroll background
+.landing-header--bg {
+  position: absolute;
+
+  height: 100vh;
+  min-width: 100vw;
+  // if the width of the device is greater than the height, the image should actually be the full width so it still fills the screen
+  // @media (orientation: landscape) {
+  //   height: 100vw;
+  // }
+
+  // transform it to add depth and parallax scrolling
+  transform-origin: center center;
+  // different screen sizes will need different transforms here to centre the image. On phones:
+  transform: translateZ(-1px) scale(2);
+
+  z-index: -1;
+
+  // by default, landing-header--bg should have opacity 0, so it can fade in on load
+  opacity: 0;
+  transition: opacity 200ms ease-out 400ms;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+.landing-content {
+  // add a white background to go on top of the parallax background
+  background-color: white;
+  // and make sure it appears ABOVE the parallax image
+  position: relative;
+  z-index: 1;
+
+  // add padding
+  box-sizing: border-box;
+  padding: 50px 20px;
+
+  // on desktop, there should be white space on either side of the content if the screen is big enough
+  @media (min-width: 1700px) {
+    // padding on etiher side should be HALF of the space over 1700px, so that the content between is max 1700px.
+    padding: 50px calc((100vw - 1700px) / 2);
+  }
+}
+
+.landing-header--centre {
+  text-align: center;
+}
+
+.landing-header--subtitle {
+  padding: 16px 20px;
+
+  // remove the padding on larger devices
+  @media (min-width: 740px) {
+    padding: 0;
+  }
+}
+
+.landing-divider {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px;
+
+  hr {
+    background-color: #ddd;
+    border: none;
+    height: 1px;
+    width: 100%;
+  }
+
+  &.landing-divider--white hr {
+    background-color: white;
+  }
+
+  &.landing-divider--content {
+    @media (min-width: 740px) {
+      // above the divider, on a tablet or larger screen, there should be 154px of white space
+      margin-top: 154px;
+    }
+  }
+}
+
+.landing-sponsors {
+
+  h2 {
+    text-align: center;
+    margin: 17px 0;
+    font-size: 28px;
+    font-weight: 400;
+    font-family: $header-font;
+
+    // adjust the text on larger screens
+    @media (min-width: 740px) {
+      margin-top: 0;
+      font-size: 36px;
+      letter-spacing: .1em;
+      line-height: 1.3em;
+    }
+  }
+
+}
+
+// in the sponsors section, display a grid of logos and links to the diamond sponsors
+.landing-sponsors--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+
+  .landing-sponsor img {
+    width: 100%;
+    max-height: 140px;
+
+    // no max-height on a laptop or desktop
+    @media (min-width: 1024px) {
+      max-height: unset;
+    }
+  }
+}
